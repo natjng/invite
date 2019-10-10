@@ -14,4 +14,9 @@ class EventsController < ApplicationController
         render json: EventSerializer.new(event)
     end
 
+    private
+
+    def event_params
+        params.require(:event).permit(:name, :date, :start_time, :end_time, :location, :description, :details, :host_id)
+    end
 end
