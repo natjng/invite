@@ -6,7 +6,9 @@ class UsersController < ApplicationController
 
     def show
         user = User.find_by(id: params[:id])
-        render json: UserSerializer.new(user)
+        options = {}
+        options[:include] = [:events]
+        render json: UserSerializer.new(user, options)
     end
 
     def create
