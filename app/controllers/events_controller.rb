@@ -9,4 +9,9 @@ class EventsController < ApplicationController
         render json: EventSerializer.new(event)
     end
 
+    def create
+        event = Event.find_or_create_by(event_params)
+        render json: EventSerializer.new(event)
+    end
+
 end
