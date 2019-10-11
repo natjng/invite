@@ -12,13 +12,13 @@ class UsersController < ApplicationController
     end
 
     def create
-        user = User.find_or_create_by(user_params)
+        user = User.find_or_create_by(user_params(:email))
         render json: UserSerializer.new(user)
     end
 
     def update
         user = User.find_by(id: params[:id])
-        if user.update(user_params)
+        if user.update(user_params(:email, :name))
             render json: UserSerializer.new(user)
         else
             render json: {error: "Unable to update account."}
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 
     private
 
-    def user_params
-        params.require(:user).permit(:email)
+    def user_params(*args)
+        params.require(:user).permit(*args)
     end
 end
