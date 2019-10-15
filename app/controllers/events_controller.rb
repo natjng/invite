@@ -10,8 +10,12 @@ class EventsController < ApplicationController
     end
 
     def create
-        event = Event.find_or_create_by(event_params)
-        render json: EventSerializer.new(event)
+        event = Event.new(event_params)
+        if event.save
+            render json: EventSerializer.new(event)
+        else
+            render json: {error: "Unable to create event."}
+        end
     end
 
     private
