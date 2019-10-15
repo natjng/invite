@@ -18,6 +18,15 @@ class EventsController < ApplicationController
         end
     end
 
+    def update
+        event = Event.find_by(id: params[:id])
+        if event.update(event_params)
+            render json: EventSerializer.new(event)
+        else
+            render json: {error: "Unable to update event."}
+        end
+    end
+
     private
 
     def event_params
