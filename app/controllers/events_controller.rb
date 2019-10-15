@@ -27,6 +27,11 @@ class EventsController < ApplicationController
         end
     end
 
+    def destroy
+        event = Event.find_by(id: params[:id])
+        event.destroy
+    end
+
     private
 
     def event_params
