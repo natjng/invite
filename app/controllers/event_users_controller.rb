@@ -13,4 +13,14 @@ class EventUsersController < ApplicationController
             render json: {error: "Unable to rsvp for event."}
         end
     end
+
+    def destroy
+        event = Event.find_by(id: params[:event_id])
+        event_user = EventUser.find_by(id: params[:id])
+        if event_user.destroy
+            render json: EventSerializer.new(event)
+        else
+            render json: {error: "Unable to remove rsvp for event."}
+        end
+    end
 end
