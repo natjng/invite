@@ -32,7 +32,7 @@ Upon successful account creation, the user will be logged in and brought to thei
 - Can create events
 - The user creating the event is the event host
 - Can RSVP to other users' events as a guest
-- Can cancel their RSVP by navigating to the event and clicking 'Cancel'
+- Can cancel RSVP by navigating to the event and clicking 'Cancel'
 - Can navigate to the 'Events' page to view all events on Invite
 - Can toggle 'Events' / 'Attending' or 'Hosting' to view events the user has RSVP'd to or events the user is hosting
 - Can edit profile
