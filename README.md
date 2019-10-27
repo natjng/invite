@@ -32,11 +32,11 @@ Run `bundle install`, `rails db:create`, and `rails db:migrate`.
 
 You may also run `rails db:seed` to seed the database with some starter data.
 
-Run `rails s` to start your server and visit [http://localhost:3000](http://localhost:3000).
-
 ## Usage
 
 The Invite API works with the [Invite client](https://github.com/natjng/invite-client) to retrieve and persist user and event data. Please follow the Invite client README for installation instructions.
+
+Run `rails s` to start your server and visit [http://localhost:3000](http://localhost:3000).
 
 On the home page, a user can get started by creating an account with an email address. 
 
